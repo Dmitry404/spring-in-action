@@ -24,16 +24,16 @@ public class DesignTacoController {
   @GetMapping
   public String showDesignForm(Model model) {
     List<Ingredient> ingredients = Arrays.asList(
-        new Ingredient("FLTO", "Flour Tortilla", Type.WRAP),
-        new Ingredient("COTO", "Corn Tortilla", Type.WRAP),
-        new Ingredient("GRBF", "Ground Beef", Type.PROTEIN),
-        new Ingredient("CARN", "Carnitas", Type.PROTEIN),
-        new Ingredient("TMTO", "Diced Tomatoes", Type.VEGGIES),
-        new Ingredient("LETC", "Lettuce", Type.VEGGIES),
-        new Ingredient("CHED", "Cheddar", Type.CHEESE),
-        new Ingredient("JACK", "Monterrey Jack", Type.CHEESE),
-        new Ingredient("SLSA", "Salsa", Type.SAUCE),
-        new Ingredient("SRCR", "Sour Cream", Type.SAUCE)
+        ImmutableIngredient.builder().id("FLTO").name("Flour Tortilla").type(Type.WRAP).build(),
+        ImmutableIngredient.builder().id("COTO").name("Corn Tortilla").type(Type.WRAP).build(),
+        ImmutableIngredient.builder().id("GRBF").name("Ground Beef").type(Type.PROTEIN).build(),
+        ImmutableIngredient.builder().id("CARN").name("Carnitas").type(Type.PROTEIN).build(),
+        ImmutableIngredient.builder().id("TMTO").name("Diced Tomatoes").type(Type.VEGGIES).build(),
+        ImmutableIngredient.builder().id("LETC").name("Lettuce").type(Type.VEGGIES).build(),
+        ImmutableIngredient.builder().id("CHED").name("Cheddar").type(Type.CHEESE).build(),
+        ImmutableIngredient.builder().id("JACK").name("Monterrey Jack").type(Type.CHEESE).build(),
+        ImmutableIngredient.builder().id("SLSA").name("Salsa").type(Type.SAUCE).build(),
+        ImmutableIngredient.builder().id("SRCR").name("Sour Cream").type(Type.SAUCE).build()
     );
 
     model.addAllAttributes(
