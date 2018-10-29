@@ -1,0 +1,46 @@
+buildscript {
+  ext {
+    springBootVersion = '2.0.6.RELEASE'
+  }
+  repositories {
+    mavenCentral()
+  }
+  dependencies {
+    classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+  }
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'org.ua.spring.tacos'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 10
+
+repositories {
+  mavenCentral()
+}
+
+ext {
+  junitVersion = '5.3.1'
+}
+
+idea {
+  module {
+    downloadJavadoc = true
+    downloadSources = true
+  }
+}
+
+dependencies {
+  implementation('org.springframework.boot:spring-boot-starter-thymeleaf')
+  implementation('org.springframework.boot:spring-boot-starter-web')
+  runtimeOnly('org.springframework.boot:spring-boot-devtools')
+  testImplementation('org.springframework.boot:spring-boot-starter-test')
+
+  testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
+  testCompile("org.junit.jupiter:junit-jupiter-params:${junitVersion}")
+  testRuntime("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+}
