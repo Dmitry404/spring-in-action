@@ -31,7 +31,7 @@ class DesignTacoControllerTest {
   void createTacoOrder() throws Exception {
     mockMvc.perform(
         post("/design")
-            .param("name", "valid_name")
+            .param("name", "new taco")
             .param("ingredients", "FLTO")
     )
         .andExpect(status().is3xxRedirection())
